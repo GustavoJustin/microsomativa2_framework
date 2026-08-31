@@ -1,16 +1,24 @@
 {
-  "dependencies": {
-    "bootstrap": "^5.3.8"
-  },
   "name": "somativa_framework",
   "version": "1.0.0",
-  "description": "",
+  "description": "Bem Vindo! Ao Portfolio Musical 🎶",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/GustavoJustin/microsomativa2_framework.git"
+  },
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "type": "commonjs"
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/GustavoJustin/microsomativa2_framework/issues"
+  },
+  "homepage": "https://github.com/GustavoJustin/microsomativa2_framework#readme",
+  "dependencies": {
+    "bootstrap": "^5.3.8"
+  }
 }

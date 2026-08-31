@@ -1,0 +1,7 @@
+/* Importa o Bootstrap via CSS puro */
+@import "../../node_modules/bootstrap/dist/css/bootstrap.min.css";
+
+/* Seus estilos customizados abaixo */
+body {
+    background-color: #f8f9fa;
+}
