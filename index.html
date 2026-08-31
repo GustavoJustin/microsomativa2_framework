@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,8 +9,8 @@
     <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap-grid.min.css">
 
     <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-
 </head>
+
 <body>
     <nav class="navbar-expand-lg bg-danger navbar-dark">
         <div class="container">
@@ -24,13 +25,13 @@
                     <li class="nav-item"><a class="nav-link" href="#explorar">Explorar</a></li>
                 </ul>
             </div>
-        </div>
-    </nav>
+        </nav>
+    </header>
 
     <main class="container my-5">
-        <h2 class="text-center fw-bold md-4">Suas Músicas</h2>
-        <div class="row g-3 row-cols-1 row-cols-md-2 row-cols-lg-3" id="containerMusicas"></div>
-    </main>
+        <section id="home">
+            <div>
+                <h2 class="text-center">Home</h2>
 
     <section id="home" class="container my-5">
             <div class="row justify-content-center">
@@ -44,24 +45,66 @@
         </section>
 
 
+        <hr class="my-5">
+
         <section id="listas">
             <div>
                 
             </div>
         </section>
 
+        <hr class="my-5">
 
         <section id="explorar">
             <div>
-                
-            </div>
+                <h2 class="text-center">Explorar</h2>
+
+                <div class="container mt-5" style="max-width: 500px;">
+                    <div class="mb-3">
+                        <label for="campoBusca" class="form-label">Digite um nome para filtrar:</label>
+                        <input type="text" id="campoBusca" class="form-control" placeholder="Digite para buscar...">
+                    </div>
+
+                    <!-- O HTML começa vazio. O JavaScript vai preencher esta lista -->
+                    <ul id="listaElementos" class="list-group"></ul>
+                </div>
+
+                <div class="modal fade" id="modalMusica" tabindex="-1" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title fw-bold" id="modalTitulo"></h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                    aria-label="Fechar"></button>
+                            </div>
+                            <div class="modal-body text-center">
+                                <img id="modalImagem" src="" alt="Capa da música" class="img-fluid rounded mb-3 shadow"
+                                    style="max-height: 250px; object-fit: cover;">
+                                <p id="modalDescricao" class="text-muted"></p>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
         </section>
 
-    <footer>
+    <div class="d-flex justify-content-end">
+        <button id="inicio" class="bg-danger text-white fw-bold rounded border nav-item"><a href="#"
+                class="nav-link">Voltar para Home</a></button>
+    </div>
 
+    <footer class="bg-dark text-center text-white">
+        <div class="container py-2">
+            <p class="mb-0">&copy; Avaliação Somativa Front-end</p>
+        </div>
     </footer>
 
     <script src="src/js/script.js" defer></script>
+    <script src="src/js/teste.js"></script>
+    <script src="src/js/busca.js"></script>
 </body>
 
 </html>
