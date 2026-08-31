@@ -12,7 +12,7 @@ class Musica {
         }
      }
 
-     const catalogo = [
+     const listas= [
         new Musica(
             "Vai ser tão lindo",
             "Pedro Henrique",
@@ -30,7 +30,7 @@ class Musica {
             )
            ];
 
-           const constainerCatalogo = document.querySelector('#catalogo-musicas');
+           const constainerlistas = document.querySelector('#listas-musicas');
 
            function criarCardMusica(musica){
             const col = document.createElement('div');
@@ -65,7 +65,7 @@ class Musica {
 }
 
 // Renderiza todos os cards na tela
-function renderizarCatalogo() {
+function renderizarlistas() {
   if (!containerCatalogo) return;
   containerCatalogo.innerHTML = '';
   catalogo.forEach(musica => {
@@ -73,7 +73,7 @@ function renderizarCatalogo() {
   });
 }
 
-renderizarCatalogo();
+renderizarlistas();
 
 
 // Integração com o Modal do Bootstrap para exibir detalhes dinamicamente
