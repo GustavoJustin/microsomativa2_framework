@@ -1,45 +1,45 @@
 class Musica {
-    constructor(titulo, cantor, genero, ano,capaUrl) {
-        this.titulo = titulo;
-        this.cantor = cantor;
-        this.genero = genero;
-        this.ano = ano;
-        this.capaUrl = capaUrl
-    }
+  constructor(titulo, cantor, genero, ano, capaUrl) {
+    this.titulo = titulo;
+    this.cantor = cantor;
+    this.genero = genero;
+    this.ano = ano;
+    this.capaUrl = capaUrl
+  }
 
-        formatarSubtitulo(){
-            return `${this.genero} . ${this.ano}`;
-        }
-     }
+  formatarSubtitulo() {
+    return `${this.genero} . ${this.ano}`;
+  }
+}
 
-     const listas= [
-        new Musica(
-            "Vai ser tão lindo",
-            "Pedro Henrique",
-            "Gospel",
-            2023,
-            "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR2rVTEamP5Z1JNEOcC5LxGBmL4rnLAy91FhU2Cjcy2vWccOgYKVE7dA6tw&s=10"
-           ),
-           
-            new Musica(
-                "Acende outra vez",
-                "Jefferson e Suelen",
-                "Gospel",
-                2023,
-                "https://i.ytimg.com/vi/86cC5jqPPBI/maxresdefault.jpg"
-            )
-           ];
+const listas = [
+  new Musica(
+    "Vai ser tão lindo",
+    "Pedro Henrique",
+    "Gospel",
+    2023,
+    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR2rVTEamP5Z1JNEOcC5LxGBmL4rnLAy91FhU2Cjcy2vWccOgYKVE7dA6tw&s=10"
+  ),
 
-           const constainerlistas = document.querySelector('#listas-musicas');
+  new Musica(
+    "Acende outra vez",
+    "Jefferson e Suelen",
+    "Gospel",
+    2023,
+    "https://i.ytimg.com/vi/86cC5jqPPBI/maxresdefault.jpg"
+  )
+];
 
-           function criarCardMusica(musica){
-            const col = document.createElement('div');
-            col.className = 'col-12 col-md-6 col-lg-3';
+const constainerlistas = document.querySelector('#listas-musicas');
 
-            const card = document.createElement('article');
-            card.className = 'card card-musica h-100 text-light';
+function criarCardMusica(musica) {
+  const col = document.createElement('div');
+  col.className = 'col-12 col-md-6 col-lg-3';
 
-         card.innerHTML = `
+  const card = document.createElement('article');
+  card.className = 'card card-musica h-100 text-light';
+
+  card.innerHTML = `
     <img src="${musica.capaUrl}" class="card-img-top capa-album" alt="Capa de ${musica.titulo}">
     <div class="card-body d-flex flex-column">
       <h5 class="card-title fw-bold text-white mb-1">${musica.titulo}</h5>
@@ -66,10 +66,10 @@ class Musica {
 
 // Renderiza todos os cards na tela
 function renderizarlistas() {
-  if (!containerCatalogo) return;
-  containerCatalogo.innerHTML = '';
-  catalogo.forEach(musica => {
-    containerCatalogo.appendChild(criarCardMusica(musica));
+  if (!constainerlistas) return;
+  constainerlistas.innerHTML = '';
+  listas.forEach(musica => {
+    constainerlistas.appendChild(criarCardMusica(musica));
   });
 }
 
@@ -81,18 +81,18 @@ const modalMusica = document.getElementById('modalMusica');
 if (modalMusica) {
   modalMusica.addEventListener('show.bs.modal', (event) => {
     const button = event.relatedTarget;
-   
+
     // Extração dos atributos data-* do botão acionado
-    const titulo    = button.getAttribute('data-titulo');
-    const cantor    = button.getAttribute('data-cantor');
-    const genero    = button.getAttribute('data-genero');
-    const ano       = button.getAttribute('data-ano');
-    
+    const titulo = button.getAttribute('data-titulo');
+    const cantor = button.getAttribute('data-cantor');
+    const genero = button.getAttribute('data-genero');
+    const ano = button.getAttribute('data-ano');
+
 
     // Preenchimento dos elementos internos do Modal
-    document.getElementById('modalTitulo').textContent    = titulo;
-    document.getElementById('modalcantor').textContent    = cantor;
-    document.getElementById('modalGenero').textContent    = `Gênero: ${genero}`;
-    document.getElementById('modalAno').textContent       = `Lançamento: ${ano}`;
+    document.getElementById('modalTitulo').textContent = titulo;
+    document.getElementById('modalcantor').textContent = cantor;
+    document.getElementById('modalGenero').textContent = `Gênero: ${genero}`;
+    document.getElementById('modalAno').textContent = `Lançamento: ${ano}`;
   });
 }
