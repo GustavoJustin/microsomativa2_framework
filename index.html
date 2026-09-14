@@ -13,7 +13,7 @@
 
 <body>
     <header>
-        <nav class="navbar navbar-expand-lg bg-danger navbar-dark">
+        <nav class="navbar navbar-expand-lg bg-primary navbar-dark">
             <div class="container">
                 <a class="navbar-brand fw-bold" href="#">MoonMusic</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu">
@@ -35,14 +35,14 @@
             <div>
                 <h2 class="text-center">Home</h2>
 
-    <section id="home" class="container my-5">
-            <div class="row justify-content-center">
-                <div class="col-12 col-md-8 col-lg-6">
-                    <h2 class="text-center fw-bold mb-4">Escolha a sua Música!</h2>
-                    <!-- Colocar as Imagens -->
-                     
-                </div>
-            </div>
+                <section id="home" class="container my-5">
+                    <div class="row justify-content-center">
+                        <div class="col-12 col-md-8 col-lg-6">
+                            <h2 class="text-center fw-bold mb-4">Escolha a sua Música!</h2>
+                            <!-- Colocar as Imagens -->
+
+                        </div>
+                    </div>
             </div>
         </section>
 
@@ -58,12 +58,17 @@
 
         <section id="explorar">
             <div>
-                <h2 class="text-center">Explorar</h2>
+                <h2 class="text-center">Explorar 🚀</h2>
 
                 <div class="container mt-5" style="max-width: 500px;">
                     <div class="mb-3">
-                        <label for="campoBusca" class="form-label">Digite um nome para filtrar:</label>
-                        <input type="text" id="campoBusca" class="form-control" placeholder="Digite para buscar...">
+                        <label for="campoBusca" class="form-label fw-semibold">Digite um nome para filtrar:</label>
+                        <div class="d-flex text-center input-group" id="campoBusca-style">
+                            <span class="input-group-text bg-primary rounded-end-0" id="icone-busca">🔍</span>
+                            <input type="text" id="campoBusca"
+                            class="form-control rounded-start-0"
+                            placeholder="Digite para buscar...">
+                        </div>
                     </div>
 
                     <!-- Lista preenchida via JS -->
@@ -74,19 +79,18 @@
     </main>
 
     <div class="d-flex justify-content-end me-3">
-        <button id="inicio" class="bg-danger text-white fw-bold rounded border p-2">
+        <button id="inicio" class="bg-primary text-white fw-bold rounded border p-2">
             <a href="#" class="nav-link text-white">Voltar para Home</a>
         </button>
     </div>
 
-    <!-- Estrutura do pop-up -->
     <!-- Estrutura do Pop-up (Modal) Estilizado -->
     <div class="modal fade" id="modalMusica" tabindex="-1" aria-labelledby="modalTitulo" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content border-0 shadow-lg rounded-4 overflow-hidden">
 
-                <!-- Cabeçalho na cor tema (Vermelho) -->
-                <div class="modal-header bg-danger text-white border-0">
+                <!-- Cabeçalho na cor tema (azul) -->
+                <div class="modal-header bg-primary text-white border-0">
                     <h5 class="modal-title fw-bold" id="modalTitulo">Carregando...</h5>
                     <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"
                         aria-label="Fechar"></button>
@@ -101,7 +105,7 @@
 
                 <!-- Rodapé com botão arredondado -->
                 <div class="modal-footer border-0 justify-content-center pt-0 pb-4">
-                    <button type="button" class="btn btn-danger px-4 rounded-pill fw-semibold"
+                    <button type="button" class="btn btn-primary px-4 rounded-6 fw-semibold"
                         data-bs-dismiss="modal">Fechar</button>
                 </div>
 

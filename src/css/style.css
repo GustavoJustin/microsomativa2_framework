@@ -3,5 +3,11 @@
 
 /* Seus estilos customizados abaixo */
 body {
-    background-color: #f8f9fa;
+    background-color: #eeeeee;
+}
+
+#campoBusca-style {
+    border-radius: 20px 0px 20px 0px;
+    width: 100%;
+    
 }

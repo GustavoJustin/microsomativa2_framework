@@ -79,7 +79,7 @@ document.addEventListener('DOMContentLoaded', () => {
             li.className = "list-group-item list-group-item-action";
             li.style.cursor = "pointer";
 
-            li.innerHTML = `<strong>${item.nome}</strong>`;
+            li.innerHTML = `${item.nome}`;
 
             // Chama a função centralizada do pop-up.js
             li.addEventListener('click', () => {
