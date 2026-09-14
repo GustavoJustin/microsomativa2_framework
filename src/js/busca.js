@@ -79,16 +79,12 @@ document.addEventListener('DOMContentLoaded', () => {
             li.className = "list-group-item list-group-item-action";
             li.style.cursor = "pointer";
 
-            // Atributos nativos do Bootstrap para acionar o Modal ao clicar
-            li.setAttribute('data-bs-toggle', 'modal');
-            li.setAttribute('data-bs-target', '#modalMusica');
-
             li.innerHTML = `<strong>${item.nome}</strong>`;
 
-            // Preenche o Modal com as informações do item clicado
+            // Chama a função centralizada do pop-up.js
             li.addEventListener('click', () => {
-                if (typeof preencherModal === 'function') {
-                    preencherModal(item);
+                if (typeof abrirModalMusica === 'function') {
+                    abrirModalMusica(item);
                 }
             });
 

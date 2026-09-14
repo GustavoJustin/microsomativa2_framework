@@ -3,13 +3,21 @@ function abrirModalMusica(musica) {
     const modalElement = document.getElementById('modalMusica');
     if (!modalElement) return;
 
-    // Atualiza os dados do modal
-    document.getElementById('modalTitulo').textContent = musica.nome;
-    document.getElementById('modalImagem').src = musica.imagem;
-    document.getElementById('modalImagem').alt = musica.nome;
-    document.getElementById('modalDescricao').textContent = musica.descricao;
+    // Elementos principais do modal
+    const elTitulo = document.getElementById('modalTitulo');
+    const elImagem = document.getElementById('modalImagem');
+    const elDescricao = document.getElementById('modalDescricao');
+    const elCantor = document.getElementById('modalcantor');
 
-    // Obtém/Cria a instância do modal do Bootstrap e abre
+    if (elTitulo) elTitulo.textContent = musica.nome || musica.titulo || '';
+    if (elImagem) {
+        elImagem.src = musica.imagem || musica.capaUrl || '';
+        elImagem.alt = musica.nome || musica.titulo || '';
+    }
+    if (elDescricao) elDescricao.textContent = musica.descricao || '';
+    if (elCantor) elCantor.textContent = musica.cantor ? `Artista: ${musica.cantor}` : '';
+
+    // Abre o modal do Bootstrap via JavaScript
     const modalInstancia = bootstrap.Modal.getOrCreateInstance(modalElement);
     modalInstancia.show();
 }
